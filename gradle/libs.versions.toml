@@ -1,40 +1,41 @@
 [versions]
 agp = "8.6.1"
-androidSerialportVersion = "2.1.5"
 appcompatVersion = "1.7.0"
+base64 = "2.0.0"
+charset = "1.2.0"
 constraintlayoutVersion = "2.2.0"
-core = "3.5.3"
 coreVersion = "3.5.3"
+jwtdecode = "2.0.2"
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
+kotlinStdlibJdk7 = "1.9.20"
 material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.2.0"
-mavenCore = "3.9.9"
 serialport = "2.1.2"
-zxingAndroidEmbedded = "4.3.0"
 
 
 [libraries]
-android-serialport = { module = "com.licheedev:android-serialport", version.ref = "androidSerialportVersion" }
 androidx-appcompat-v131 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
 androidx-constraintlayout-v204 = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayoutVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+base64 = { module = "org.ow2.util.base64:base64", version.ref = "base64" }
+charset = { module = "charset:charset", version.ref = "charset" }
 core-v341 = { module = "com.google.zxing:core", version.ref = "coreVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+jwtdecode = { module = "com.auth0.android:jwtdecode", version.ref = "jwtdecode" }
+kotlin-stdlib-jdk7 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk7", version.ref = "kotlinStdlibJdk7" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-maven-core = { module = "org.apache.maven:maven-core", version.ref = "mavenCore" }
 serialport = { module = "io.github.xmaihh:serialport", version.ref = "serialport" }
-zxing-android-embedded = { module = "com.journeyapps:zxing-android-embedded", version.ref = "zxingAndroidEmbedded" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
