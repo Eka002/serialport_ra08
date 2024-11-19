@@ -2,7 +2,6 @@
 agp = "8.6.1"
 appcompatVersion = "1.7.0"
 base64 = "2.0.0"
-charset = "1.2.0"
 constraintlayoutVersion = "2.2.0"
 coreVersion = "3.5.3"
 jwtdecode = "2.0.2"
@@ -16,6 +15,8 @@ kotlinStdlibJdk7 = "1.9.20"
 material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.2.0"
+rules = "1.6.1"
+runner = "1.6.2"
 serialport = "2.1.2"
 
 
@@ -23,8 +24,9 @@ serialport = "2.1.2"
 androidx-appcompat-v131 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
 androidx-constraintlayout-v204 = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayoutVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-rules = { module = "androidx.test:rules", version.ref = "rules" }
+androidx-runner = { module = "androidx.test:runner", version.ref = "runner" }
 base64 = { module = "org.ow2.util.base64:base64", version.ref = "base64" }
-charset = { module = "charset:charset", version.ref = "charset" }
 core-v341 = { module = "com.google.zxing:core", version.ref = "coreVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

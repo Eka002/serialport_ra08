@@ -12,7 +12,7 @@ android {
         minSdk = 30
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,12 +45,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation (libs.core.v341)
-    implementation (libs.androidx.appcompat.v131)
-    implementation (libs.androidx.constraintlayout.v204)
+    implementation(libs.core.v341)
+    implementation(libs.androidx.appcompat.v131)
+    implementation(libs.androidx.constraintlayout.v204)
     api(libs.serialport)
     implementation(libs.jwtdecode)
     implementation(libs.base64)
-    implementation (libs.kotlin.stdlib.jdk7)
-
+    implementation(libs.kotlin.stdlib.jdk7)
+    androidTestImplementation (libs.androidx.rules)
+    androidTestImplementation (libs.androidx.runner)
 }
