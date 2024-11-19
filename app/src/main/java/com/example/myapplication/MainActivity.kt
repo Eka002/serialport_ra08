@@ -12,6 +12,7 @@ import tp.xmaihh.serialport.bean.ComBean
 import android.util.Base64
 import org.json.JSONObject
 import java.nio.charset.Charset
+import java.util.Locale
 
 private const val TAG = "MainActivity"
 
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private const val SERIAL_PORT_PATH = "/dev/ttyS3"
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -41,21 +43,23 @@ class MainActivity : AppCompatActivity() {
                                 val header = decodeBase64Url(parts[0])
                                 val payload = decodeBase64Url(parts[1])
                                 val jwt = receiveData
-                                val publicKey = "Ваш публичный ключ"
+                               // val publicKey = "Ваш публичный ключ"
 
-                                val headerJson = JSONObject(header).toString(4)
-                                val payloadJson = JSONObject(payload).toString(4)
+                                val headerJson = JSONObject(header)
+                                val alg = headerJson.optString("alg", "")
+                                    .lowercase(Locale.getDefault())
+                                val sub = JSONObject(payload).optString("sub", "")
+                                val name = JSONObject(payload).optString("name", "")
 
                                 resultTextView.text = """
-                                    Sample App For Generate JWT With
-                                    Algorithm: EC-256
-                                    HeaderJson: $headerJson
-                                    PayloadJson: $payloadJson
+                                    Alg: $alg
+                                    Sub: $sub
+                                    Name: $name
                                     JWT: $jwt
-                                    PublicKey: $publicKey
                                 """.trimIndent()
                             } else {
-                                resultTextView.text = "Данные: $receiveData не соответсвуют кодировке JWT"
+                                resultTextView.text =
+                                    "Данные: $receiveData не соответсвуют кодировке JWT"
                             }
                         } else {
                             resultTextView.text = "Нет данных для отображения"
@@ -66,6 +70,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+
             private fun decodeBase64Url(encoded: String): String {
                 val base64Url = encoded.replace("-", "+").replace("__", "/")
                 val decodedBytes = Base64.decode(base64Url, Base64.DEFAULT)

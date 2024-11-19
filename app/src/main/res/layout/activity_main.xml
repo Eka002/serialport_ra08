@@ -13,8 +13,8 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="331dp"
-            android:layout_height="476dp"
+            android:layout_width="358dp"
+            android:layout_height="653dp"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
